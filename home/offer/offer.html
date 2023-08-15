@@ -1,0 +1,17 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script type="text/javascript" src="js/jQuery.js"></script>
+</head>
+<body>
+    <form class="bg-body-tertiary p-5 rounded"  action="/offer" method="post">
+        <h1 class="display-5 fw-normal">Thank you for offering your space to an incomming student! Please provide the following information:</h1>
+        <div class="form-group"><label>Location: </label><input placeholder="(Ex: Waho)" class="form-control" id="location"></div>
+        Name of current occupants: <input class="form-control" id="occupants"><br>
+        Total Beds in residence: <input  class="form-control" id="bedsInResidence"><br>
+        Available Beds: <input  class="form-control" id="availableBeds"><br>
+        Beds Available Starting: <input placeholder="(Ex: 8-25-23)"  class="form-control" id="startDate"><br>
+        Beds Available Ending: <input placeholder="(Ex: 9-15-23)" class="form-control"  id="endDate"><br>
+        Submitter Email: <input class="form-control"  id="submitterEmail"><br>
+        <button class="btn btn-primary w-100 py-2">Submit!</button>
+    </form>
+</body>

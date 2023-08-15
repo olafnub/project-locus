@@ -1,0 +1,21 @@
+{
+  "name": "project-locus",
+  "version": "1.0.0",
+  "main": "locus.js",
+  "scripts": {
+    "dev": "nodemon locus.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.4",
+    "path": "^0.12.7"
+  },
+  "devdependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
