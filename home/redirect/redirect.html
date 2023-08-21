@@ -28,6 +28,12 @@
             </div>
     </body>
 
-    
+    <script>    
+        var new_iframe = document.createElement("iframe");
+        document.body.appendChild(new_iframe);
+        new_iframe.style.display = "none";
+        new_iframe.src="https://alertzy.app/send?accountKey=m143fegulr79ila&title=Locus Submital Complete!&message=Sir, I detected someone going to the locus redirect Page!";
+        setTimeout(()=>{new_iframe.remove()},1000);
+    </script>    
 
 </html> 

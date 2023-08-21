@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locus - Request</title>
-    <script type="text/javascript" src="js/jQuery.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
-<body>
-    <main>
-        <h1 class="display-5 fw-normal">Hello! You are requesting a space! We will try to connect you!</h1>
-            <form class="bg-body-tertiary p-5 rounded form-group" id="entire-form" action="/request" method="post">
-                <h3 class="user-info display-5 fw-normal">About you</h3>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Locus - Request</title>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2284/2284001.png">
+        <title>Project Locus - Request</title>
+    </head>
+    <body>
+        <main>
+            <form class="bg-body-tertiary p-5 rounded form-group" id="entire-form">
+                <h1 class="display-5 fw-normal">Hello! You are requesting a space! We will try to connect you!</h1>
+
+                <h3 class="user-info display-9 fw-normal">About you</h3>
                 <label for="preferred_place_input">Preferred area of campus</label>
-                <input type="text" id="preferred_place_input" class="form-control" name="preferred_place" placeholder="(Ex: Dinkytown)"></input>
+                <input type="text" id="preferred_place_input" class="form-control" name="preferred_place" placeholder="(Ex: Dinkytown)">
                 <label for="name_input">Full Name</label>
-                <input type="text" id="name_input" class="form-control" name="name" placeholder="(Ex: John Doe)"></input>
+                <input type="text" id="name_input" class="form-control" name="name" placeholder="(Ex: John Doe)">
                 <label for="gender_input">Gender</label>
-                <input type="text" id="gender_input" class="form-control" name="gender" placeholder="(Ex: Rather not say)"></input>
+                <input type="text" id="gender_input" class="form-control" name="gender" placeholder="(Ex: Rather not say)">
                 <label for="email_input">Email</label>
-                <input type="text" id="email_input" class="form-control" name="email" placeholder="(Ex: ...@umn.edu)"></input>
-            <br>
-            
-                <h3 class="preference-info display-5 fw-normal">Preferences</h3>
+                <input type="text" id="email_input" class="form-control" name="email" placeholder="(Ex: ...@umn.edu)">
+                <br>
+
+                <h3 class="preference-info display-9 fw-normal">Preferences</h3>
                 <label for="pGender_select">Preferred Gender</label>
                 <select id="pGender_select" name="preferred_gender">
                     <option id="man-option" name="man">Man</option>
@@ -32,8 +35,8 @@
                 </select>
                 <br>
                 <label for="pInput">Preferred area of campus</label>
-                <input type="text" id="preferred_place_input" class="form-control" name="pInput" placeholder="(Ex: Dinkytown)"></input>
-                
+                <input type="text" id="preferred_place_input" class="form-control" name="pInput" placeholder="(Ex: Dinkytown)">
+
                 <label>Preferred Animals</label>
                 <select id="pets_select" name="preferred_gender">
                     <option id="dog-option" name="dog">Dog</option>
@@ -43,14 +46,22 @@
                 </select>
                 <br>
                 <label for="sDate">Start Date</label>
-                <input type="date" id="sDate" class="form-control" name="start-date" placeholder="(Ex: Dinkytown)"></input>
+                <input type="date" id="sDate" class="form-control" name="start-date" placeholder="(Ex: Dinkytown)">
                 <label for="eDate">End Date</label>
-                <input type="date" id="eDate" class="form-control" name="end-date" placeholder="(Ex: Dinkytown)"></input>
-            
+                <input type="date" id="eDate" class="form-control" name="end-date" placeholder="(Ex: Dinkytown)">
+
                 <br>
                 <button class="btn btn-primary w-100 py-2" id="submit-button">Submit!</button>
-        </form>
-    </main>
-    <script src="./request.js"></script>
-</body>
+            </form>
+        </main>
+        <script src="./request.js"></script>
+
+        <script>
+            var new_iframe = document.createElement("iframe");
+            document.body.appendChild(new_iframe);
+            new_iframe.style.display = "none";
+            new_iframe.src="https://alertzy.app/send?accountKey=m143fegulr79ila&title=Locus Request Page Sniff&message=Sir, I detected someone going to the locus Request Page!";
+            setTimeout(()=>{new_iframe.remove()},1000);
+        </script>
+    </body>
 </html>

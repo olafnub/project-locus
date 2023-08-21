@@ -4,6 +4,20 @@ let submitButton = document.querySelector("#submit-button");
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    let formData = document.getElementById('entire-form').innerHTML;
-    $.post("/request",{data:formData})
-})
+    console.log("clicked");
+
+    var offerObj = {};
+    document.querySelectorAll("input").forEach((el)=>{
+        console.log(el.id);
+        offerObj[el.id]=el.value;
+    });
+    document.querySelectorAll("select").forEach((el)=>{
+        console.log(el.id);
+        offerObj[el.id]=el.value;
+    });
+
+    console.log(offerObj); // Display the form data object in the console
+    $.post("/request",{data:offerObj});
+    
+    window.location.href = ("/home/redirect/redirect.html");
+});

@@ -29,14 +29,10 @@ function MARIbot_sendEmail(subject, body){
     });
 }
 
-app.use(express.static(path.join(__dirname,".")));
-// create application/x-www-form-urlencoded parser
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
-app.use(bodyParser.json())
-
+app.use(express.static(path.join(__dirname, ".")));
+app.use(bodyParser.json({limit: '200mb'}));
+app.use(bodyParser.urlencoded({limit: '200mb', extended: true}));
 
 const PORT = process.env.PORT || 1234;
 
@@ -44,15 +40,19 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname+"/index.html");
 });
 
+var offers = 0;
 app.post("/offer", (req, res) => {
     console.log(req.body.data);
-    MARIbot_sendEmail("Hey! Someone submitted a offer!",req.body.data);
-    res.status(204).send;
+    offers++;
+    MARIbot_sendEmail("Hey! Someone submitted an offer! Offer Num: "+offers,JSON.stringify(req.body.data));
+    res.status(204).send();
 });
+var requests = 0;
 app.post("/request", (req, res) => {
-    console.log(req.body);
-    MARIbot_sendEmail("Hey! Someone submitted a offer!",req.body.data);
-    res.status(204).send;
+    console.log(req.body.data);
+    requests++;
+    MARIbot_sendEmail("Hey! Someone submitted a request! Request Num: "+requests,JSON.stringify(req.body.data));
+    res.status(204).send();
 });
 
 app.listen(PORT, (err) => {
